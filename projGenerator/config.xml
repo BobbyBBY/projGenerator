@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- database -->
+	<property name="database.url" value="jdbc:mysql://localhost:3306/moretable"></property>
+	<property name="database.driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name="database.username" value="root"></property>
+	<property name="database.password" value="123456"></property>
+	
+	<!-- basePackage -->
+	<property name="model.basePackage" value="com.ld.model"></property>
+	<property name="mapper.basePackage" value="com.ld.mapper"></property>
+	<property name="mapperXml.basePackage" value="com.ld.mapper.xml"></property>
+	<property name="service.basePackage" value="com.ld.service"></property>
+	<property name="controller.basePackage" value="com.ld.controller"></property>
+	
+	<!-- table -->
+	<table tableName="department_info" modelName="DepartmentInfo"></table>
+	<table tableName="enterprise_info" modelName="EnterpriseInfo"></table>
+	<table tableName="news_info" modelName="NewsInfo">
+		<fkprop column="dept_id" property="departmentInfo" javaType="DepartmentInfo"></fkprop>
+	</table>
+	<table tableName="student_info" modelName="StudentInfo"></table>
+	<table tableName="teacher_info" modelName="TeacherInfo"></table>
+</configuration>
